@@ -7,26 +7,26 @@ function love.load()
 	rooms = {
 		{
 			chance = 10,
-			tiles = {{0,0}},
+			tiles = { {0,0} },
 			exits = { {1,0}, {0,1}, {-1,0}, {0,-1} }
 		},
 		{  -- 2x2 room
 			chance = 3,
 			tiles = { {0,0}, {1,0}, {0,-1}, {1,-1} },
-			exits = { {2,0}, {0,1}, {0,-1}, {0,-2} }
+			exits = { {2,0}, {0,1}, {-1,0}, {0,-2} }
 		},
 		{  -- 3x3 room
 			chance = 1,
 			tiles = {
-				{-1,-1}, {0,-1}, {1,-1},
-				{-1,0}, {0,0}, {1,0},
-				{-1,1}, {0,1}, {1,1}
+				{0,-1}, {0,0}, {0,1},
+				{1,-1}, {1,0}, {1,1},
+				{2,-1}, {2,0}, {2,1}
 			},
-			exits = { {2,0}, {0,2}, {-2,0}, {0,-2} }
+			exits = { {3,0}, {1,2}, {-1,0}, {1,-2} }
 		}
 	}
 
-	map = newMap(150, {4, 1, 1, 0}, rooms)
+	map = newMap(150, {3, 1, 0, 1}, rooms)
 	math.randomseed(generateSeedFromClock())
 
 	love.graphics.setBackgroundColor(36, 33, 18)
