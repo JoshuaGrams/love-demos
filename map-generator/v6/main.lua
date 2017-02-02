@@ -41,7 +41,8 @@ function love.keypressed(key)
 end
 
 function love.update(dt)
-	unsimulated = unsimulated + dt
+	if map.n >= map.max then unsimulated = 0
+	else unsimulated = unsimulated + dt end
 	while unsimulated >= step and placeRandomRoom(map) do
 		unsimulated = unsimulated - step
 		moveRandomly(map)
