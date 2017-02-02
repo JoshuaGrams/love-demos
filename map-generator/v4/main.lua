@@ -5,7 +5,7 @@ function love.load()
 	unsimulated = 0
 
 	map = newMap(150)
-	math.randomseed(seedFromClock())
+	math.randomseed(generateSeedFromClock())
 
 	love.graphics.setBackgroundColor(36, 33, 18)
 end
@@ -57,10 +57,10 @@ end
 
 function resetMap(map)
 	clearMap(map)
-	math.randomseed(seedFromClock())
+	math.randomseed(generateSeedFromClock())
 end
 
-function seedFromClock()
+function generateSeedFromClock()
 	local seed = os.time() + math.floor(1000 * os.clock())
 	seed = seed * seed % 1000000
 	seed = seed * seed % 1000000
