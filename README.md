@@ -1,4 +1,4 @@
-Little idea/algorithm demos for the LÖVE game engine.
+# Small idea/algorithm demos for the LÖVE game engine.
 
 The Maine Game Developers group was talking about having a bit
 more structure to our meetings. I suggested doing some actual
