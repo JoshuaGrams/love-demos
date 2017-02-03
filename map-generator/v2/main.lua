@@ -1,3 +1,5 @@
+-- Add placeFloor function to build table.
+
 function love.load()
 	tSz = 16
 

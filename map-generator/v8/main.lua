@@ -1,3 +1,5 @@
+-- Refactoring in preparation for multiple walkers.
+
 function love.load()
 	tSz = 16
 

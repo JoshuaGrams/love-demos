@@ -1,3 +1,5 @@
+-- Add non-uniform chances of turning in different directions.
+
 function love.load()
 	tSz = 16
 

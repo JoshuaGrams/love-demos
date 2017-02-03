@@ -1,3 +1,5 @@
+-- Randomly place different rooms.
+
 function love.load()
 	tSz = 16
 

@@ -1,3 +1,5 @@
+-- Add load function, draw the rectangles from a table.
+
 function love.load()
 	tSz = 16
 

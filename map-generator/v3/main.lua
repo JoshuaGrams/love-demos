@@ -1,3 +1,5 @@
+-- Walk around randomly to fill the table.
+
 function love.load()
 	tSz = 16
 

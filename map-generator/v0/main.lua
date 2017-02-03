@@ -1,3 +1,5 @@
+-- Draw a few rectangles.
+
 function drawFloor(x, y)
 	local tSz = 16
 	love.graphics.rectangle("fill", x*tSz, y*tSz, tSz, tSz)

@@ -1,3 +1,5 @@
+-- Animate random walk, get seed from clock, space key reseeds.
+
 function love.load()
 	tSz = 16
 

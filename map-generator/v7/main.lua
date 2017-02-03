@@ -1,3 +1,5 @@
+-- Add scrolling, space finishes map before starting another.
+
 function love.load()
 	tSz = 16
 
