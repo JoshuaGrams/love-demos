@@ -36,18 +36,18 @@ end
 
 function generateMap(map, seed)
 	math.randomseed(seed)
-	while placeFloor(map) do
+	while placeFloor(map, map.x, map.y) do
 		moveRandomly(map)
 	end
 	return map
 end
 
-function placeFloor(map)
+function placeFloor(map, x, y)
 	local canPlace = map.n < map.max
 	if canPlace then
-		local key = tostring(map.x) .. ',' .. tostring(map.y)
+		local key = tostring(x) .. ',' .. tostring(y)
 		if map.floorTiles[key] == nil then
-			map.floorTiles[key] = {map.x, map.y}
+			map.floorTiles[key] = {x, y}
 			map.n = map.n + 1
 		end
 	end

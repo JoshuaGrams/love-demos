@@ -136,8 +136,8 @@ function generationStep(map)
 end
 
 function addRandomRoom(map)
-	local r = randomChoice(map.roomChances)
-	addRoom(map, map.rooms[r], map.x, map.y)
+	local room = map.rooms[randomChoice(map.roomChances)]
+	addRoom(map, room, map.x, map.y)
 end
 
 function addRoom(map, room, x, y)

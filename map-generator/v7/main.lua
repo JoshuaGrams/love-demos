@@ -52,7 +52,7 @@ end
 function love.keypressed(key)
 	if key == 'space' then
 		if isComplete(map) then
-			resetMap(map)
+			reseedMap(map)
 		else
 			local oldStep = step;  step = 0
 			love.update(0)
@@ -109,7 +109,7 @@ end
 
 function isComplete(map)  return map.n >= map.max  end
 
-function resetMap(map)
+function reseedMap(map)
 	clearMap(map)
 	math.randomseed(generateSeedFromClock())
 end

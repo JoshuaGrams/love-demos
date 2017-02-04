@@ -39,7 +39,7 @@ function love.draw()
 end
 
 function love.keypressed(key)
-	if key == 'space' then resetMap(map) end
+	if key == 'space' then reseedMap(map) end
 end
 
 function love.update(dt)
@@ -84,7 +84,7 @@ function clearMap(map)
 	map.x = 25;  map.y = 18;  map.dir = 0;
 end
 
-function resetMap(map)
+function reseedMap(map)
 	clearMap(map)
 	math.randomseed(generateSeedFromClock())
 end

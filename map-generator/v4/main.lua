@@ -17,12 +17,12 @@ function love.draw()
 end
 
 function love.keypressed(key)
-	if key == 'space' then resetMap(map) end
+	if key == 'space' then reseedMap(map) end
 end
 
 function love.update(dt)
 	unsimulated = unsimulated + dt
-	while unsimulated >= step and placeFloor(map) do
+	while unsimulated >= step and placeFloor(map, map.x, map.y) do
 		unsimulated = unsimulated - step
 		moveRandomly(map)
 	end
@@ -57,7 +57,7 @@ function clearMap(map)
 	map.x = 25;  map.y = 18;  map.dir = 0;
 end
 
-function resetMap(map)
+function reseedMap(map)
 	clearMap(map)
 	math.randomseed(generateSeedFromClock())
 end
@@ -72,18 +72,18 @@ end
 
 function generateMap(map, seed)
 	math.randomseed(seed)
-	while placeFloor(map) do
+	while placeFloor(map, map.x, map.y) do
 		moveRandomly(map)
 	end
 	return map
 end
 
-function placeFloor(map)
+function placeFloor(map, x, y)
 	local canPlace = map.n < map.max
 	if canPlace then
-		local key = tostring(map.x) .. ',' .. tostring(map.y)
+		local key = tostring(x) .. ',' .. tostring(y)
 		if map.floorTiles[key] == nil then
-			map.floorTiles[key] = {map.x, map.y}
+			map.floorTiles[key] = {x, y}
 			map.n = map.n + 1
 		end
 	end
