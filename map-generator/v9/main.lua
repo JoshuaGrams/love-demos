@@ -95,6 +95,7 @@ function newMap(floorCount, dirChances, branchChance, rooms)
 	local roomChances = {}
 	for i=1,#rooms do roomChances[i] = rooms[i].chance end
 	local map = {
+		absoluteDirections = true,
 		max=floorCount,
 		dirChances = normalizedChances(dirChances),
 		rooms = rooms,
@@ -175,7 +176,11 @@ end
 
 function moveRandomly(map, walker)
 	local turn = randomChoice(map.dirChances) - 1
-	walker.dir = (walker.dir + turn) % 4
+	if map.absoluteDirections then
+		walker.dir = turn
+	else
+		walker.dir = (walker.dir + turn) % 4
+	end
 	local e = walker.exits[walker.dir+1]
 	walker.x = walker.x + e[1]
 	walker.y = walker.y + e[2]
