@@ -110,6 +110,7 @@ end
 function isComplete(map)  return map.n >= map.max  end
 
 function reseedMap(map)
+	xCenter, yCenter = 0, 0
 	clearMap(map)
 	math.randomseed(generateSeedFromClock())
 end
